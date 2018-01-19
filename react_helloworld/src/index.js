@@ -1,7 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ShoppingList from './components/shopping';
 import './index.css';
-// import registerServiceWorker from './registerServiceWorker';
-console.log(parseFloat("10.2abc"));
-ReactDOM.render(<h1> Hello, world!</h1>, document.getElementById('root'));
-// registerServiceWorker();
+
+function formatName(user){
+    return user.firstName+' '+user.lastName;
+}
+const user={
+    firstName:'Harper',
+    lastName:'Perez'
+};
+
+const element=(<h1>Hello,{formatName(user)}!</h1>);
+ReactDOM.render(<ShoppingList name="Mark" />, document.getElementById('root'));
+
+ReactDOM.render(element, document.getElementById('list'));
